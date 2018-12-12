@@ -85,9 +85,31 @@ public class Main {
 		} else {
 			getModulebyCode(code).setEnseignantnReferent(getEnseignantByNom(nomEnseignant));
 			return true;
+		}	
+	}
+	
+	public static boolean affecterEnseignant() {
+		System.out.println("Entrer le nom de l'enseignant à affecter: ");
+		String nomEnseignant = scan.nextLine();	
+		
+		if(getEnseignantByNom(nomEnseignant).equals(null)) {
+			System.out.println("Cet enseignant n'existe pas");
+			return false;
 		}
 		
-
+		System.out.println("Entrer le code du module dont vous voulez change le référent : ");
+		String code = scan.nextLine();
+		
+		//on vérifie que le module existe bien
+		if(getModulebyCode(code).equals(null)) {
+			System.out.println("Ce module n'existe pas");
+			return false;
+		} else {
+			getModulebyCode(code).getListeEnseignants().add(getEnseignantByNom(nomEnseignant));
+			return true;
+		}
+		
+		
 	}
 	
 	public static Module getModulebyCode(String code) {
