@@ -14,6 +14,7 @@ public class Main {
 	}
 	
 	public static void initialiser() {
+		System.out.println("...Initialisation...");
 		Enseignant mrWang = new Enseignant("Wang", "Patrick", "patrick.xang@isep.fr", "spec");
 		listeEnseignants.add(mrWang);
 		listeModules.add(new Module("Algo & Programmation" , "II.1102"));

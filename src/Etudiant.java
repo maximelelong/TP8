@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Etudiant {
 	
 	private String nom, prenom, mail, niveauDEtude;
-	private ArrayList<Module> moduleSuivis;
-	private ArrayList<Note> listeNotes;
+	private ArrayList<Module> moduleSuivis = new ArrayList<>();
+	private ArrayList<Note> listeNotes = new ArrayList<>();
 
 	public Etudiant(String nom, String prenom, String mail, String niveauDETUDE){
 		this.mail = mail;
